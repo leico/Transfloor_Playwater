@@ -52,7 +52,7 @@ XCodeプロジェクト設定の *info* タブ、 *configurations* のプロジ�
 
 ## Kinectの指定方法
 
-`bin -> data -> serial.json`に割り当てるKinectのシリアルが2つ、json形式で記述されている。
+*bin* -> *data* -> *serial.json* に割り当てるKinectのシリアルが2つ、json形式で記述されている。
 ```json
 [
  "A00364800479053A",
@@ -60,7 +60,7 @@ XCodeプロジェクト設定の *info* タブ、 *configurations* のプロジ�
 ]
 ```
 
-シリアルの確認方法は `src -> MainScreen.h -> setup_KinectCV`が
+シリアルの確認方法は *src* -> *MainScreen.h* -> `setup_KinectCV`が
 ```cpp
 /* =================================================================== *
  * void setup_KinectCV(void)                                           *
@@ -111,7 +111,80 @@ ofxKinect :: listDevices();
 カメラの検出設定等は *main.maxpat* を利用する。同じ階層にある *interface.maxpat* は *main.maxpat* から呼び出される。
 
 {% capture url %}{{site.github.url}}{% link images/02_main.png %}{% endcapture %}
-{% include thumbnail.html url=url caption='
+{% assign caption='
 *main.maxpat* の画面。このパッチを利用して外部のコンピュータから操作することができる。
-' %}
+' | markdownify %}
 
+{% include thumbnail.html url=url caption=caption %}
+設定はプログラム終了時に *bin* -> *data* -> *settings.json* に書き出され、設定した内容が次回起動時に呼び出される。
+
+```json
+
+{"A00363A02391053A":{"angle":0,"area":{"max":140,"min":23},"blur":7,"clip":{"height":420,"width":640,"x":0,"y":60},"depth":{"max":255,"min":40},"displaymode":2,"mirror":{"h":true,"v":true},"secondary":true,"size":{"x":1280,"y":720}},"A00364800479053A":{"angle":0,"area":{"max":140,"min":23},"blur":7,"clip":{"height":420,"width":640,"x":0,"y":0},"depth":{"max":200,"min":40},"displaymode":2,"mirror":{"h":false,"v":false},"secondary":false,"size":{"x":1280,"y":720}}}
+```
+
+Json形式。整形してないのでわかりづらいが
+
+```json
+{
+  "A00363A02391053A": {
+    "angle": 0,
+    "area": {
+      "max": 140,
+      "min": 23
+    },
+    "blur": 7,
+    "clip": {
+      "height": 420,
+      "width": 640,
+      "x": 0,
+      "y": 60
+    },
+    "depth": {
+      "max": 255,
+      "min": 40
+    },
+    "displaymode": 2,
+    "mirror": {
+      "h": true,
+      "v": true
+    },
+    "secondary": true,
+    "size": {
+      "x": 1280,
+      "y": 720
+    }
+  },
+  "A00364800479053A": {
+    "angle": 0,
+    "area": {
+      "max": 140,
+      "min": 23
+    },
+    "blur": 7,
+    "clip": {
+      "height": 420,
+      "width": 640,
+      "x": 0,
+      "y": 0
+    },
+    "depth": {
+      "max": 200,
+      "min": 40
+    },
+    "displaymode": 2,
+    "mirror": {
+      "h": false,
+      "v": false
+    },
+    "secondary": false,
+    "size": {
+      "x": 1280,
+      "y": 720
+    }
+  }
+}
+```
+
+こうなっている。それぞれKinectのシリアルに紐付いて設定が記述されている。
+パラメータは *main.maxpat* で設定できるものと同じ。
