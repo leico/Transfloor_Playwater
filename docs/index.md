@@ -35,7 +35,7 @@ HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS) src $(OF_PATH)/addons/ofxOsc/src/** $(O
 * `$(OF_PATH)/addons/ofxKinect/libs/libfreenect/src/**`
 * `$(OF_PATH)/addons/ofxKinect/libs/libfreenect/include/**`
 * `$(OF_PATH)/addons/ofxJSON/src/**`
-* `$(OF_PATH)/addons/ofxJSON/libs/**
+* `$(OF_PATH)/addons/ofxJSON/libs/**`
 * `$(OF_PATH)/addons/ofxSimpleTimer/src/`
 
 これらをヘッダファイルを検索する場所として設定している。末尾が `**` のパスは再帰的にフォルダ内を検索する。
@@ -48,3 +48,58 @@ HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS) src $(OF_PATH)/addons/ofxOsc/src/** $(O
 *xcconfig* 設定画面
 ' %}
 
+XCodeプロジェクト設定の *info* タブ、 *configurations* のプロジェクト設定、ターゲット設定が **transfloor** になっていることを確認する。
+
+## Kinectの指定方法
+
+`bin -> data -> serial.json`に割り当てるKinectのシリアルが2つ、json形式で記述されている。
+```json
+[
+ "A00364800479053A",
+ "A00363A02391053A"
+]
+```
+
+シリアルの確認方法は `src -> MainScreen.h -> setup_KinectCV`が
+```cpp
+/* =================================================================== *
+ * void setup_KinectCV(void)                                           *
+ * =================================================================== */
+inline void MainScreen :: setup_KinectCV(void){
+  
+  ofxKinect :: listDevices();
+  {
+    ofxJSON json;
+    if( ( json.open(serialfile) ) && ( ! json.isNull() ) ){
+      kinect1.setup( json[0].asString() );
+      kinect2.setup( json[1].asString() );
+    }
+    else{
+      ofLogWarning() << "json.open: Can't open serial.json file, use default serial" << std :: endl;
+      kinect1.setup("A00364800479053A");
+      kinect2.setup("A00363A02391053A");
+    }
+    if( json.open(jsonfile) ){
+      ofLogVerbose() << json.getRawString() << endl;
+      
+      kinect1.SettingData( json );
+      kinect2.SettingData( json );
+    }
+    else{
+      ofLogWarning() << "json.open: Can't open serial.json file, use default settings" << std :: endl;
+    }
+    json.clear();
+  }
+  
+  return;
+  
+}
+```
+
+となっていて、最初の
+
+```cpp
+ofxKinect :: listDevices();
+```
+
+でコンソールに接続されているKinectのシリアルが出力される。
