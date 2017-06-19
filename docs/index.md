@@ -102,4 +102,16 @@ inline void MainScreen :: setup_KinectCV(void){
 ofxKinect :: listDevices();
 ```
 
-でコンソールに接続されているKinectのシリアルが出力される。
+でコンソールに接続されているKinectのシリアルが出力されるようになっている。
+これに合わせて`serial.json`の値を変更する。
+
+
+## 設営時の設定
+
+カメラの検出設定等は *main.maxpat* を利用する。同じ階層にある *interface.maxpat* は *main.maxpat* から呼び出される。
+
+{% capture url %}{{site.github.url}}{% link images/02_main.png %}{% endcapture %}
+{% include thumbnail.html url=url caption='
+*main.maxpat* の画面。このパッチを利用して外部のコンピュータから操作することができる。
+' %}
+
