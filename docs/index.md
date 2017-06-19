@@ -43,8 +43,8 @@ HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS) src $(OF_PATH)/addons/ofxOsc/src/** $(O
 
 ## XCode設定ファイルの適用方法
 
-{% capture url %}{{site.github.url}}{% link docs/images/01_config.png %}{% endcapture %}
-{% include thumbnail.html url=url caption'
+{% capture url %}{{site.github.url}}{% link images/01_config.png %}{% endcapture %}
+{% include thumbnail.html url=url caption='
 *xcconfig* 設定画面
 ' %}
 
