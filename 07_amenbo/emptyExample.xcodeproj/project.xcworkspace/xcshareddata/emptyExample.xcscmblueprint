@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A2E65E72840F6C90A89DEBA5F3DCAE764F64E221",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5DB7C332A3A89035E93556A2A38BF414005BA671" : 9223372036854775807,
+    "A2E65E72840F6C90A89DEBA5F3DCAE764F64E221" : 9223372036854775807,
+    "08F3D3A15FA3C2FC10B56D44868186246C6B2A26" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "658FC68C-64C2-491B-BD28-D2129874AF8E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5DB7C332A3A89035E93556A2A38BF414005BA671" : "..\/addons\/ofxJSON",
+    "A2E65E72840F6C90A89DEBA5F3DCAE764F64E221" : "Transfloor_Playwater\/",
+    "08F3D3A15FA3C2FC10B56D44868186246C6B2A26" : "..\/addons\/ofxSimpleTimer"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "emptyExample",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "07_amenbo\/emptyExample.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/leico\/ofxSimpleTimer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "08F3D3A15FA3C2FC10B56D44868186246C6B2A26"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/leico\/ofxJSON.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5DB7C332A3A89035E93556A2A38BF414005BA671"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/leico\/Transfloor_Playwater",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A2E65E72840F6C90A89DEBA5F3DCAE764F64E221"
+    }
+  ]
+}
