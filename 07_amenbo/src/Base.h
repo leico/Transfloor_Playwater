@@ -26,10 +26,10 @@ class Base{
     virtual void osc   (vector<ofxOscMessage> &m) = 0;
     virtual void draw  (void)                     = 0;
 
-    int ofGetWidth (void);
-    int ofGetHeight(void);
+    static int ofGetWidth (void);
+    static int ofGetHeight(void);
 
-    void resize(const int w, const int h);
+    static void resize(const int w, const int h);
 };
 
 inline int Base :: ofGetWidth(void) { return width;  }

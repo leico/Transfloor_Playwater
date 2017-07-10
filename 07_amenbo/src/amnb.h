@@ -16,8 +16,8 @@
 class amnb{
 
 
-  const static int AMNB_SIZE = 50;
-  const static int RANGE     = 50;
+  const static int AMNB_SIZE = 20;
+  const static int RANGE     = 100;
   const static int MARGIN    = 50;
 
   float easing;
@@ -100,6 +100,7 @@ public:
       }
     }
 
+    pos.Update();
     aloned.Update();
 
 
@@ -115,8 +116,8 @@ public:
         if(pos.Current().distance( human ) <= RANGE){
 
           ofPoint goal = ofPoint( 
-                ofRandom(MARGIN, ofGetWidth()  - MARGIN)
-              , ofRandom(MARGIN, ofGetHeight() - MARGIN)
+                  ofRandom(MARGIN, Base :: ofGetWidth()  - MARGIN)
+                , ofRandom(MARGIN, Base :: ofGetHeight() - MARGIN)
               );
 
           pos.Target(goal);
@@ -137,8 +138,10 @@ public:
   //------------------------------------------------------
   void Draw(void){
 
+    ofFill();
     ofDrawCircle(pos.Current(), AMNB_SIZE);
 
+    ofNoFill();
     if( alone != NULL) alone -> Draw();
     if( move  != NULL) move  -> Draw();
     if( locus != NULL) locus -> Draw();

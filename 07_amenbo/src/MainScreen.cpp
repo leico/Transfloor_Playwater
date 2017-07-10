@@ -164,8 +164,9 @@ void MainScreen::keyPressed(int key){
   if(key == 'f'){
     ofToggleFullscreen();
     
-    if(ofGetWindowMode() == OF_FULLSCREEN) ofHideCursor();
-    else                                   ofShowCursor();
+      if(ofGetWindowMode() == OF_FULLSCREEN) CGDisplayHideCursor(NULL);//ofHideCursor();
+      else                                   CGDisplayShowCursor(NULL);//ofShowCursor();
+
   }
 }
 
@@ -196,15 +197,13 @@ void MainScreen::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void MainScreen::windowResized(int w, int h){
-
-  if(basedraw)
-    basedraw -> resize(w, h);
-
-  binaryImage  .resize(w, h);
-
+    
   width  = w;
   height = h;
+  
+  Base :: resize(ofGetWidth(), ofGetHeight());
 
+  binaryImage  .resize(w, h);
 
 }
 

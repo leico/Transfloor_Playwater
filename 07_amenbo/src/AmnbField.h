@@ -15,7 +15,7 @@
 
 class AmnbField : public Base{
 
-  const static int AMNB_NUM = 16;
+  const static int AMNB_NUM = 7;
   const static int MARGIN   = 50;
 
   amnb amenbo[AMNB_NUM];

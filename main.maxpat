@@ -3,9 +3,9 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 3,
-			"revision" : 4,
-			"architecture" : "x86",
+			"minor" : 1,
+			"revision" : 0,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -38,11 +38,77 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 283.0, 577.0, 59.0, 22.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_initial" : [ 12345 ],
+							"parameter_initial_enable" : 1,
+							"parameter_invisible" : 1,
+							"parameter_linknames" : 1,
+							"parameter_longname" : "port",
+							"parameter_shortname" : "port",
+							"parameter_type" : 3
+						}
+
+					}
+,
+					"saved_object_attributes" : 					{
+						"annotation_name" : "",
+						"initial" : [ 12345 ],
+						"parameter_enable" : 1
+					}
+,
+					"style" : "",
+					"text" : "pattr port",
+					"varname" : "port"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 167.0, 577.0, 49.0, 22.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_initial" : [ "127.0.0.1" ],
+							"parameter_initial_enable" : 1,
+							"parameter_invisible" : 1,
+							"parameter_linknames" : 1,
+							"parameter_longname" : "IP",
+							"parameter_shortname" : "IP",
+							"parameter_type" : 3
+						}
+
+					}
+,
+					"saved_object_attributes" : 					{
+						"annotation_name" : "",
+						"initial" : [ "127.0.0.1" ],
+						"parameter_enable" : 1
+					}
+,
+					"style" : "",
+					"text" : "pattr IP",
+					"varname" : "IP"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-15",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 283.0, 590.0, 36.0, 20.0 ],
+					"patching_rect" : [ 283.0, 545.0, 36.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 13.0, 125.0, 36.0, 20.0 ],
 					"style" : "",
@@ -56,7 +122,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 167.0, 590.0, 72.0, 20.0 ],
+					"patching_rect" : [ 167.0, 545.0, 72.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 13.0, 73.0, 72.0, 20.0 ],
 					"style" : "",
@@ -72,7 +138,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 283.0, 655.0, 61.0, 22.0 ],
-					"presentation_rect" : [ 454.0, 501.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "route text"
 				}
@@ -92,7 +157,8 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 13.0, 149.0, 61.0, 22.0 ],
 					"style" : "",
-					"text" : "12345"
+					"text" : "127.0.0.1",
+					"varname" : "textedit[1]"
 				}
 
 			}
@@ -123,7 +189,8 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 13.0, 97.0, 104.0, 22.0 ],
 					"style" : "",
-					"text" : "192.168.1.125"
+					"text" : "192.168.1.125",
+					"varname" : "textedit"
 				}
 
 			}
@@ -285,6 +352,8 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-10", 0 ]
 				}
 
@@ -292,13 +361,35 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-11", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-12", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-14", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-2", 0 ]
 				}
 
@@ -306,6 +397,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -313,6 +406,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -320,6 +415,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-53", 0 ]
 				}
 
@@ -327,6 +424,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -334,6 +433,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-9", 0 ]
 				}
 
@@ -341,6 +442,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-96", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-95", 0 ]
 				}
 
@@ -348,15 +451,21 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-96", 0 ]
 				}
 
 			}
  ],
+		"parameters" : 		{
+			"obj-12" : [ "IP", "IP", 0 ],
+			"obj-14" : [ "port", "port", 0 ]
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "interface.maxpat",
-				"bootpath" : "~/Desktop/of_v0.9.8_osx_release/apps/Transfloor_Playwater",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/Downloads/of_v0.9.8_osx_release/apps/Transfloor_Playwater",
 				"type" : "JSON",
 				"implicit" : 1
 			}
