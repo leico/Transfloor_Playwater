@@ -42,6 +42,7 @@
 		F42A6B311F0F95D900142876 /* usb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F42A6AE71F0F95D900142876 /* usb-1.0.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		F42A6B331F0F95D900142876 /* ofxKinectExtras.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F42A6AF71F0F95D900142876 /* ofxKinectExtras.cpp */; };
 		F42A6B341F0F95D900142876 /* ofxKinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F42A6AFA1F0F95D900142876 /* ofxKinect.cpp */; };
+		F46323461F15079400701B41 /* Sine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46323441F15079400701B41 /* Sine.cpp */; };
 		F4DA3A9F1F11023700812CC5 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4DA3A8E1F11023700812CC5 /* Base.cpp */; };
 		F4DA3AA01F11023700812CC5 /* Change.mm in Sources */ = {isa = PBXBuildFile; fileRef = F4DA3A921F11023700812CC5 /* Change.mm */; };
 		F4DA3AA11F11023700812CC5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4DA3A941F11023700812CC5 /* main.cpp */; };
@@ -348,6 +349,7 @@
 		F42A6AF91F0F95D900142876 /* ofxBase3DVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBase3DVideo.h; sourceTree = "<group>"; };
 		F42A6AFA1F0F95D900142876 /* ofxKinect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxKinect.cpp; sourceTree = "<group>"; };
 		F42A6AFB1F0F95D900142876 /* ofxKinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxKinect.h; sourceTree = "<group>"; };
+		F46323441F15079400701B41 /* Sine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sine.cpp; sourceTree = "<group>"; };
 		F4B244531F10E4F9006987DE /* amnb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amnb.h; path = src/amnb.h; sourceTree = SOURCE_ROOT; };
 		F4DA3A8B1F10FFFF00812CC5 /* tkm001.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tkm001.h; path = src/tkm001.h; sourceTree = SOURCE_ROOT; };
 		F4DA3A8E1F11023700812CC5 /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Base.cpp; path = src/Base.cpp; sourceTree = SOURCE_ROOT; };
@@ -1220,6 +1222,7 @@
 				F4DA3A9B1F11023700812CC5 /* sinsin.h */,
 				3B2E811F1F14E64B0083981B /* SineField.h */,
 				3B2E81201F14E6830083981B /* Sine.h */,
+				F46323441F15079400701B41 /* Sine.cpp */,
 				F4DA3A9C1F11023700812CC5 /* takami.h */,
 				F4DA3A9D1F11023700812CC5 /* TransFloor.h */,
 				F4DA3A9E1F11023700812CC5 /* WhiteOut.h */,
@@ -1345,6 +1348,7 @@
 				F42A6B291F0F95D900142876 /* cameras.c in Sources */,
 				F42A6B201F0F95D900142876 /* ofxCvContourFinder.cpp in Sources */,
 				F42A6B2B1F0F95D900142876 /* flags.c in Sources */,
+				F46323461F15079400701B41 /* Sine.cpp in Sources */,
 				F4DA3A9F1F11023700812CC5 /* Base.cpp in Sources */,
 				F42A6B1F1F0F95D900142876 /* ofxCvColorImage.cpp in Sources */,
 				F42A6B111F0F95D900142876 /* NetworkingUtils.cpp in Sources */,

@@ -14,9 +14,11 @@
 
 class Sine{
 
-  const static int DISPLAY_AMPLITUDE = 50;
+  const static int DISPLAY_AMPLITUDE = 100;
   const static int BASE_FREQ = 100;
-  const static int MAX_SPEED = 50;
+  const static int MAX_SPEED = 20;
+
+  static int size;
 
   ofSoundPlayer sine;
   ofPoint pos;
@@ -26,6 +28,13 @@ class Sine{
   public:
   
    Sine(void){
+     sine.load("sound/100.wav");
+     sine.setMultiPlay(false);
+     sine.setLoop(true);
+     sine.setVolume(0);
+   }
+    
+   Sine(const Sine& other){
      sine.load("sound/100.wav");
      sine.setMultiPlay(false);
      sine.setLoop(true);
@@ -43,7 +52,7 @@ class Sine{
 
 
   void Update(void){
-    sine.setVolume(volume);
+    sine.setVolume(volume / size);
     sine.setSpeed (speed);
   }
 
@@ -52,8 +61,8 @@ class Sine{
       pos.x = m.getArgAsInt32(0);
       pos.y = m.getArgAsInt32(1);
       pos.z = m.getArgAsInt32(2);
-      volume =                     abs( ofMap(pos.x, 0, Base :: ofGetWidth() , -1, 1) );
-      speed  =  MAX_SPEED * (1.0 - abs( ofMap(pos.y, 0, Base :: ofGetHeight(), -1, 1) ) );
+      volume =         abs( ofMap(pos.x, 0, Base :: ofGetWidth() , -1, 1) )  ;
+      speed  =  static_cast<float>(MAX_SPEED) * (1.0 - abs( ofMap(pos.y, 0, Base :: ofGetHeight(), -1, 1) ) );
     }
   }
 
@@ -61,12 +70,18 @@ class Sine{
   void Draw(void){
 
     ofBeginShape();
-      for(int y = 0 ; y < Base :: ofGetHeight() + 5 ; y += 5){
-        ofVertex(pos.x + DISPLAY_AMPLITUDE * cos(speed * BASE_FREQ + (y - pos.y) ), y);
+      for(double radian = 0, delta = TWO_PI/1000 ; radian < TWO_PI ; radian += delta){
+        int y = static_cast<int>( ofMap(radian, 0, TWO_PI, 0, Base :: ofGetHeight()) );
+        float time = static_cast<float>(DISPLAY_AMPLITUDE) * volume * cos(speed * radian);
+        cout << time << endl;
+        ofVertex(pos.x + time, y);
       }
     ofEndShape();
 
   }
+
+  static int Size(void){ return size; }
+  static int Size(const int _size){ size = _size; return size; }
 
 };
 

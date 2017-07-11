@@ -23,6 +23,9 @@ class SineField : public Base{
   };
   
   void setup(void){
+    ofSetColor(255);
+    ofSetLineWidth(3);
+    ofNoFill();
 
   }
 
@@ -42,6 +45,11 @@ class SineField : public Base{
 
     while(waves.size() > m.size())
       waves.pop_front();
+
+      Sine :: Size( m.size() );
+    int i = 0;
+    for(std :: list<Sine> :: iterator it = waves.begin() ; it != waves.end() ; ++ it, ++ i)
+      it -> Osc( m.at(i) );
   }
 
   void draw(){

@@ -15,15 +15,17 @@
 
 class AmnbField : public Base{
 
-  const static int AMNB_NUM = 7;
+  const static int AMNB_MAX = 10;
+  const static int AMNB_MIN = 3;
   const static int MARGIN   = 50;
 
-  amnb amenbo[AMNB_NUM];
+  vector<amnb> amenbo;
 
   public:
     void setup(){
-      for(int i = 0 ; i < AMNB_NUM ; ++ i){
-        amenbo[i].Setup(
+      amenbo.resize(ofRandom(AMNB_MIN, AMNB_MAX));
+      for(int i = 0 ; i < amenbo.size() ; ++ i){
+        amenbo.at(i).Setup(
             ofPoint( ofRandom(MARGIN, ofGetWidth()  - MARGIN)
                    , ofRandom(MARGIN, ofGetHeight() - MARGIN) )
           , 0.1
@@ -32,15 +34,15 @@ class AmnbField : public Base{
     };
 
     void update(){
-      for(int i = 0 ; i < AMNB_NUM ; ++ i)
+      for(int i = 0 ; i < amenbo.size() ; ++ i)
         amenbo[i].Update();
     };
     void osc(vector< ofxOscMessage> &m){
-      for(int i = 0 ; i < AMNB_NUM ; ++ i)
+      for(int i = 0 ; i < amenbo.size() ; ++ i)
         amenbo[i].Osc(m);
     };
     void draw(){
-      for(int i = 0 ; i < AMNB_NUM ; ++ i)
+      for(int i = 0 ; i < amenbo.size() ; ++ i)
         amenbo[i].Draw();
     };
 
