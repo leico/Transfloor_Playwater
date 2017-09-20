@@ -17,7 +17,7 @@ class amnb{
 
 
   const static int AMNB_SIZE = 20;
-  const static int RANGE     = 100;
+  const static int RANGE     = 180;
   const static int MARGIN    = 50;
 
   float easing;
